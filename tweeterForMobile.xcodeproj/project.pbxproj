@@ -13,6 +13,7 @@
 		32B6E1ED24DC328400AA0C02 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32B6E1EB24DC328400AA0C02 /* Main.storyboard */; };
 		32B6E1EF24DC328600AA0C02 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32B6E1EE24DC328600AA0C02 /* Assets.xcassets */; };
 		32B6E1F224DC328600AA0C02 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32B6E1F024DC328600AA0C02 /* LaunchScreen.storyboard */; };
+		8370294BDE700A92D7E66FA9 /* Pods_tweeterForMobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE6530ABAEB6DF5AD4175BC6 /* Pods_tweeterForMobile.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,9 @@
 		32B6E1EE24DC328600AA0C02 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		32B6E1F124DC328600AA0C02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		32B6E1F324DC328600AA0C02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5A34B34E23BB2D2C4B3BFF63 /* Pods-tweeterForMobile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tweeterForMobile.debug.xcconfig"; path = "Target Support Files/Pods-tweeterForMobile/Pods-tweeterForMobile.debug.xcconfig"; sourceTree = "<group>"; };
+		DE6530ABAEB6DF5AD4175BC6 /* Pods_tweeterForMobile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tweeterForMobile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E234C28CBC68F14EE464005F /* Pods-tweeterForMobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tweeterForMobile.release.xcconfig"; path = "Target Support Files/Pods-tweeterForMobile/Pods-tweeterForMobile.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8370294BDE700A92D7E66FA9 /* Pods_tweeterForMobile.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +47,8 @@
 			children = (
 				32B6E1E424DC328400AA0C02 /* tweeterForMobile */,
 				32B6E1E324DC328400AA0C02 /* Products */,
+				445D283ACF2275B930B14FDF /* Pods */,
+				B2D979C40EAFDED8509DD314 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +74,24 @@
 			path = tweeterForMobile;
 			sourceTree = "<group>";
 		};
+		445D283ACF2275B930B14FDF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5A34B34E23BB2D2C4B3BFF63 /* Pods-tweeterForMobile.debug.xcconfig */,
+				E234C28CBC68F14EE464005F /* Pods-tweeterForMobile.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		B2D979C40EAFDED8509DD314 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DE6530ABAEB6DF5AD4175BC6 /* Pods_tweeterForMobile.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 32B6E1F624DC328600AA0C02 /* Build configuration list for PBXNativeTarget "tweeterForMobile" */;
 			buildPhases = (
+				E7F072605B79C22D284983C4 /* [CP] Check Pods Manifest.lock */,
 				32B6E1DE24DC328400AA0C02 /* Sources */,
 				32B6E1DF24DC328400AA0C02 /* Frameworks */,
 				32B6E1E024DC328400AA0C02 /* Resources */,
+				C7F43991AD5966FCAA4A712F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +159,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C7F43991AD5966FCAA4A712F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-tweeterForMobile/Pods-tweeterForMobile-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-tweeterForMobile/Pods-tweeterForMobile-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-tweeterForMobile/Pods-tweeterForMobile-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E7F072605B79C22D284983C4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-tweeterForMobile-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		32B6E1DE24DC328400AA0C02 /* Sources */ = {
@@ -282,6 +351,7 @@
 		};
 		32B6E1F724DC328600AA0C02 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5A34B34E23BB2D2C4B3BFF63 /* Pods-tweeterForMobile.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -300,6 +370,7 @@
 		};
 		32B6E1F824DC328600AA0C02 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E234C28CBC68F14EE464005F /* Pods-tweeterForMobile.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
