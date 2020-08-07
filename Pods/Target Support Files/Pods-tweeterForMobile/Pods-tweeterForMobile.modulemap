@@ -1,0 +1,6 @@
+framework module Pods_tweeterForMobile {
+  umbrella header "Pods-tweeterForMobile-umbrella.h"
+
+  export *
+  module * { export * }
+}
