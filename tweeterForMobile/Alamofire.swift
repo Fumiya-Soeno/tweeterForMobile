@@ -1,12 +1,15 @@
-import Foundation
 import Alamofire
 import SwiftyJSON
 
-class Alamofire {
-  class Params : Encodable {}
-  func alamofireRequest (requestPath: String, method: HTTPMethod, params: Params, completion: @escaping (_ json: JSON) -> ()) {
-    AF.request(requestPath,
-               method: method,
+class alamofireRequest{
+  
+  struct TweetParams : Encodable {
+    let text : String
+  }
+  
+  func tweet(params: TweetParams){
+    AF.request("http://localhost:3000/api/tweets",
+               method: .post,
                parameters: params,
                encoder: JSONParameterEncoder.default).responseJSON { response in
                 switch response.result{
@@ -14,11 +17,10 @@ class Alamofire {
                     guard let json = response.data else{
                         return
                     }
-                  completion(JSON(json))
+                    print(JSON(json))
                   case .failure(let error):
                     print("Alamofire Failed:\(error)")
                 }
     }
   }
 }
-

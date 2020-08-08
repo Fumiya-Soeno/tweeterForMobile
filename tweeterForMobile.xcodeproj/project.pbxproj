@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3258DFCA24DD509300672082 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3258DFC924DD509300672082 /* Alamofire.swift */; };
+		3258DFCC24DE40B100672082 /* TweetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3258DFCB24DE40B100672082 /* TweetViewController.swift */; };
 		32B6E1E624DC328400AA0C02 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B6E1E524DC328400AA0C02 /* AppDelegate.swift */; };
 		32B6E1E824DC328400AA0C02 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B6E1E724DC328400AA0C02 /* SceneDelegate.swift */; };
 		32B6E1EA24DC328400AA0C02 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32B6E1E924DC328400AA0C02 /* ViewController.swift */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		3258DFC924DD509300672082 /* Alamofire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alamofire.swift; sourceTree = "<group>"; };
+		3258DFCB24DE40B100672082 /* TweetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetViewController.swift; sourceTree = "<group>"; };
 		32B6E1E224DC328400AA0C02 /* tweeterForMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tweeterForMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32B6E1E524DC328400AA0C02 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		32B6E1E724DC328400AA0C02 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				32B6E1E724DC328400AA0C02 /* SceneDelegate.swift */,
 				32B6E1E924DC328400AA0C02 /* ViewController.swift */,
 				32B6E1EB24DC328400AA0C02 /* Main.storyboard */,
+				3258DFCB24DE40B100672082 /* TweetViewController.swift */,
 				32B6E1EE24DC328600AA0C02 /* Assets.xcassets */,
 				32B6E1F024DC328600AA0C02 /* LaunchScreen.storyboard */,
 				32B6E1F324DC328600AA0C02 /* Info.plist */,
@@ -211,6 +214,7 @@
 			files = (
 				32B6E1EA24DC328400AA0C02 /* ViewController.swift in Sources */,
 				32B6E1E624DC328400AA0C02 /* AppDelegate.swift in Sources */,
+				3258DFCC24DE40B100672082 /* TweetViewController.swift in Sources */,
 				3258DFCA24DD509300672082 /* Alamofire.swift in Sources */,
 				32B6E1E824DC328400AA0C02 /* SceneDelegate.swift in Sources */,
 			);

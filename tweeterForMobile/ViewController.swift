@@ -1,13 +1,18 @@
 import UIKit
+import Alamofire
 import SwiftyJSON
 
 class ViewController: UIViewController {
-  let alamofire = Alamofire()
+  let alamofire = alamofireRequest()
+  
   override func viewDidLoad() {
     super.viewDidLoad()
-    let params = Alamofire.Params()
-    alamofire.alamofireRequest(requestPath: "http://localhost:3000/api/tweets", method: .post, params: params, completion: {_ in print("")})
+    alamofire.tweet(params: alamofireRequest.TweetParams(text: "test"))
+  }
+  
+  
+  @IBAction func tweetButtonAction(_ sender: Any) {
+    self.performSegue(withIdentifier: "tweetViewSegue", sender: self)
   }
   
 }
-
