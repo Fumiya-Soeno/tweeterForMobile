@@ -158,29 +158,34 @@
                                     <constraint firstAttribute="height" constant="40" id="s2a-0g-CQ1"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="いまどうしてる？" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ccP-Dc-XVf">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gbp-Vj-VZ2" customClass="PlaceHolderTextView" customModule="tweeterForMobile" customModuleProvider="target">
                                 <rect key="frame" x="70" y="88" width="334" height="40"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="ZbN-lm-Qx7"/>
+                                    <constraint firstAttribute="height" constant="40" id="pPP-UE-oCP"/>
                                 </constraints>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="placeHolder" value="いまどうしてる？"/>
+                                </userDefinedRuntimeAttributes>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="znN-Gk-hh6" firstAttribute="leading" secondItem="b4s-Cj-aqe" secondAttribute="leading" constant="20" id="4Vf-FK-wOq"/>
-                            <constraint firstItem="b4s-Cj-aqe" firstAttribute="trailing" secondItem="ccP-Dc-XVf" secondAttribute="trailing" constant="10" id="G99-zD-lJP"/>
                             <constraint firstItem="vfe-mZ-sGE" firstAttribute="leading" secondItem="b4s-Cj-aqe" secondAttribute="leading" constant="20" id="GaL-lW-eAv"/>
-                            <constraint firstItem="ccP-Dc-XVf" firstAttribute="top" secondItem="znN-Gk-hh6" secondAttribute="bottom" constant="10" id="LFZ-hU-wcJ"/>
+                            <constraint firstItem="Gbp-Vj-VZ2" firstAttribute="top" secondItem="znN-Gk-hh6" secondAttribute="bottom" constant="10" id="NMW-QW-IgZ"/>
                             <constraint firstItem="znN-Gk-hh6" firstAttribute="top" secondItem="b4s-Cj-aqe" secondAttribute="top" id="YaN-qa-pNG"/>
+                            <constraint firstItem="Gbp-Vj-VZ2" firstAttribute="leading" secondItem="vfe-mZ-sGE" secondAttribute="trailing" constant="10" id="f1Q-cb-gIO"/>
                             <constraint firstItem="vfe-mZ-sGE" firstAttribute="top" secondItem="znN-Gk-hh6" secondAttribute="bottom" constant="10" id="iG8-rr-q4i"/>
-                            <constraint firstItem="ccP-Dc-XVf" firstAttribute="leading" secondItem="vfe-mZ-sGE" secondAttribute="trailing" constant="10" id="iZ3-Pi-xuf"/>
+                            <constraint firstItem="b4s-Cj-aqe" firstAttribute="trailing" secondItem="Gbp-Vj-VZ2" secondAttribute="trailing" constant="10" id="wSS-VE-Li8"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="b4s-Cj-aqe"/>
                     </view>
                     <connections>
-                        <outlet property="TweetTextFieldOutlet" destination="ccP-Dc-XVf" id="5Az-oo-qbo"/>
+                        <outlet property="TweetTextViewOutlet" destination="Gbp-Vj-VZ2" id="VQt-ZK-DN9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oDd-XD-k4u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
