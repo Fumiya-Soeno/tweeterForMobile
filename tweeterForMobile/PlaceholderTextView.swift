@@ -111,17 +111,10 @@ private extension PlaceHolderTextView {
         // UITextViewの編集を始めるとプレースホルダーが消え、
         // 編集完了すると、textの中身をみてプレースホルダーを表示するか判断します
         NotificationCenter.default.addObserver(self, selector: #selector(hidePlaceHolder), name: UITextView.textDidChangeNotification, object: nil)
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(changePlaceholderVisibility), name: UITextView.textDidChangeNotification, object: nil)
     }
-    
+  
     @objc func hidePlaceHolder() {
-      if self.text! != "" {
-        placeHolderLabel.isHidden = true
-      }
+      placeHolderLabel.isHidden = !text.isEmpty
     }
     
-    @objc func changePlaceholderVisibility() {
-        placeHolderLabel.isHidden = !text.isEmpty
-    }
 }

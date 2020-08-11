@@ -159,10 +159,10 @@
                                 </constraints>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gbp-Vj-VZ2" customClass="PlaceHolderTextView" customModule="tweeterForMobile" customModuleProvider="target">
-                                <rect key="frame" x="70" y="88" width="334" height="40"/>
+                                <rect key="frame" x="70" y="88" width="334" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="pPP-UE-oCP"/>
+                                    <constraint firstAttribute="height" constant="774" id="3yv-6I-zoY"/>
                                 </constraints>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
@@ -185,6 +185,7 @@
                         <viewLayoutGuide key="safeArea" id="b4s-Cj-aqe"/>
                     </view>
                     <connections>
+                        <outlet property="TweetTextViewHeightOutlet" destination="3yv-6I-zoY" id="nJl-k7-zh6"/>
                         <outlet property="TweetTextViewOutlet" destination="Gbp-Vj-VZ2" id="VQt-ZK-DN9"/>
                     </connections>
                 </viewController>
