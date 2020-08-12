@@ -1,6 +1,4 @@
 import UIKit
-import Alamofire
-import SwiftyJSON
 
 var tweetString: String = ""
 
@@ -9,10 +7,14 @@ struct TweetParams : Encodable {
 }
 
 class ViewController: UIViewController {
-  let TweetSecondView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
+  let screenSize = UIScreen.main.bounds.size
   func callBack() {
-    TweetSecondView.backgroundColor = .black
+    let TweetSecondView = UIView(frame: CGRect(x: 0, y: 0, width: self.screenSize.width, height: 40))
+    TweetSecondView.backgroundColor = UIColor(red: 0.1, green: 0.5, blue: 1.0, alpha: 1.0)
     TweetView.addSubview(TweetSecondView)
+    let TweetTextLabel = UILabel(frame: CGRect(x: 5, y: 5, width: 200, height: 30))
+    TweetTextLabel.text = tweetString
+    TweetSecondView.addSubview(TweetTextLabel)
   }
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

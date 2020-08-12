@@ -32,8 +32,8 @@ class TweetViewController: UIViewController, UITextViewDelegate{
       self.dismiss(animated: true, completion: {
         tweetString = tweet!
         self.alamofire.tweet(params: alamofireRequest.TweetParams(text: tweetString))
-        tweetString = ""
         self.childCallBack?()
+        tweetString = ""
       })
     }
   }
