@@ -14,9 +14,7 @@ class alamofireRequest{
                encoder: JSONParameterEncoder.default).responseJSON { response in
                 switch response.result{
                   case .success:
-                    guard let json = response.data else{
-                        return
-                    }
+                    guard let json = response.data else{ return }
                     print(JSON(json))
                   case .failure(let error):
                     print("Alamofire Failed:\(error)")

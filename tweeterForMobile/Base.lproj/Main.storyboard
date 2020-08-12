@@ -10,7 +10,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="tweeterForMobile" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mainStoryboard" id="BYZ-38-t0r" customClass="ViewController" customModule="tweeterForMobile" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -49,7 +49,7 @@
                                     <constraint firstAttribute="height" constant="50" id="aJa-5H-5OG"/>
                                 </constraints>
                             </stackView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lhm-HY-N66">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uwH-RC-DL9">
                                 <rect key="frame" x="0.0" y="88" width="414" height="728"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j05-TH-JYD">
@@ -62,22 +62,22 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="j05-TH-JYD" secondAttribute="bottom" constant="20" id="02s-mP-Qv4"/>
-                                    <constraint firstAttribute="trailing" secondItem="j05-TH-JYD" secondAttribute="trailing" constant="20" id="UZb-CK-Wi8"/>
+                                    <constraint firstAttribute="bottom" secondItem="j05-TH-JYD" secondAttribute="bottom" constant="20" id="iIM-SA-K9h"/>
+                                    <constraint firstAttribute="trailing" secondItem="j05-TH-JYD" secondAttribute="trailing" constant="20" id="lw7-kL-d0v"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="lhm-HY-N66" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="6Xg-li-h6S"/>
                             <constraint firstAttribute="bottom" secondItem="NEk-F3-Mk5" secondAttribute="bottom" constant="30" id="ES1-wq-nG5"/>
-                            <constraint firstItem="lhm-HY-N66" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="HJd-Dm-wGU"/>
+                            <constraint firstItem="uwH-RC-DL9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Sn0-lB-75h"/>
+                            <constraint firstItem="uwH-RC-DL9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="cPh-kM-QBo"/>
                             <constraint firstAttribute="trailing" secondItem="NEk-F3-Mk5" secondAttribute="trailing" id="hAC-bS-ARK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uwH-RC-DL9" secondAttribute="trailing" id="hx8-ud-jvh"/>
                             <constraint firstItem="NEk-F3-Mk5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="i75-lm-HHn"/>
-                            <constraint firstItem="lhm-HY-N66" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="pOz-CW-eZT"/>
-                            <constraint firstItem="NEk-F3-Mk5" firstAttribute="top" secondItem="lhm-HY-N66" secondAttribute="bottom" id="qqz-6l-GrM"/>
+                            <constraint firstItem="NEk-F3-Mk5" firstAttribute="top" secondItem="uwH-RC-DL9" secondAttribute="bottom" id="i7O-ph-71w"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -110,6 +110,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="TweetView" destination="uwH-RC-DL9" id="oFt-rF-pK5"/>
                         <segue destination="I72-Cr-dsM" kind="modal" identifier="tweetViewSegue" modalPresentationStyle="fullScreen" id="ig5-jB-j9T"/>
                     </connections>
                 </viewController>
@@ -133,7 +134,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="soA-NU-7LG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="126.5625"/>
+            <point key="canvasLocation" x="204" y="127"/>
         </scene>
         <!--Tweet View Controller-->
         <scene sceneID="NnR-cN-OHo">
@@ -171,12 +172,25 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="placeHolder" value="いまどうしてる？"/>
                                 </userDefinedRuntimeAttributes>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BAm-4g-RAW">
+                                <rect key="frame" x="305" y="49" width="99" height="27"/>
+                                <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                <state key="normal" title="　ツイートする　">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="TweetButtonAction:" destination="I72-Cr-dsM" eventType="touchUpInside" id="iOt-uY-hIV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="znN-Gk-hh6" firstAttribute="leading" secondItem="b4s-Cj-aqe" secondAttribute="leading" constant="20" id="4Vf-FK-wOq"/>
+                            <constraint firstItem="BAm-4g-RAW" firstAttribute="top" secondItem="b4s-Cj-aqe" secondAttribute="top" constant="5" id="FZr-6v-yzv"/>
                             <constraint firstItem="vfe-mZ-sGE" firstAttribute="leading" secondItem="b4s-Cj-aqe" secondAttribute="leading" constant="20" id="GaL-lW-eAv"/>
                             <constraint firstItem="Gbp-Vj-VZ2" firstAttribute="top" secondItem="znN-Gk-hh6" secondAttribute="bottom" constant="10" id="NMW-QW-IgZ"/>
+                            <constraint firstItem="b4s-Cj-aqe" firstAttribute="trailing" secondItem="BAm-4g-RAW" secondAttribute="trailing" constant="10" id="Rb1-CR-hKe"/>
                             <constraint firstItem="znN-Gk-hh6" firstAttribute="top" secondItem="b4s-Cj-aqe" secondAttribute="top" id="YaN-qa-pNG"/>
                             <constraint firstItem="Gbp-Vj-VZ2" firstAttribute="leading" secondItem="vfe-mZ-sGE" secondAttribute="trailing" constant="10" id="f1Q-cb-gIO"/>
                             <constraint firstItem="vfe-mZ-sGE" firstAttribute="top" secondItem="znN-Gk-hh6" secondAttribute="bottom" constant="10" id="iG8-rr-q4i"/>
@@ -185,13 +199,14 @@
                         <viewLayoutGuide key="safeArea" id="b4s-Cj-aqe"/>
                     </view>
                     <connections>
+                        <outlet property="TweetButtonOutlet" destination="BAm-4g-RAW" id="Y00-7M-rpc"/>
                         <outlet property="TweetTextViewHeightOutlet" destination="3yv-6I-zoY" id="nJl-k7-zh6"/>
                         <outlet property="TweetTextViewOutlet" destination="Gbp-Vj-VZ2" id="VQt-ZK-DN9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oDd-XD-k4u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1975" y="127"/>
+            <point key="canvasLocation" x="1891" y="127"/>
         </scene>
     </scenes>
     <resources>
