@@ -1,7 +1,7 @@
 import UIKit
+import SnapKit
 
 let alamofire = alamofireRequest()
-var safeAreaHeight = 0
 var tweetString: String = ""
 
 struct TweetParams : Encodable {
@@ -10,8 +10,7 @@ struct TweetParams : Encodable {
 
 class ViewController: UIViewController {
   let screenSize = UIScreen.main.bounds.size
-  let statusBarHeight = Int(UIApplication.shared.statusBarFrame.size.height)
-  let TweetView = UIScrollView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 400))
+  let TweetView = UIScrollView()
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == "tweetViewSegue" {
@@ -20,20 +19,16 @@ class ViewController: UIViewController {
       tweetViewController.stackViewHeight = Int(ButtonStackViewOutlet.bounds.height)
     }
   }
-
-  override func viewWillLayoutSubviews() {
-    super.viewWillLayoutSubviews()
-    if #available(iOS 11.0, *) {
-      safeAreaHeight = Int(self.view.safeAreaInsets.top + self.view.safeAreaInsets.bottom)
-    }
-    let stackViewHeight = Int(ButtonStackViewOutlet.bounds.height)
-//    TweetView.bounds.size.height = UIScreen.main.bounds.size.height - CGFloat(statusBarHeight + stackViewHeight + safeAreaHeight)
-//    print("safeAreaHeight:\(safeAreaHeight), statusBarHeight:\(statusBarHeight), stackViewHeight:\(stackViewHeight)")
-  }
   
   override func viewDidLoad() {
     super.viewDidLoad()
     self.view.addSubview(TweetView)
+    
+    TweetView.snp.makeConstraints { make in
+      make.bottom.equalTo(ButtonStackViewOutlet.snp.top)
+      make.left.right.top.equalToSuperview()
+    }
+    
     self.view.bringSubviewToFront(TweetButtonOutlet)
     alamofire.tweet(params: alamofireRequest.TweetParams(text: ""), view: TweetView, screenSize: screenSize)
   }
@@ -45,3 +40,4 @@ class ViewController: UIViewController {
   }
   
 }
+

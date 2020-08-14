@@ -6,6 +6,7 @@ target 'tweeterForMobile' do
   use_frameworks!
   pod 'Alamofire'
   pod 'SwiftyJSON'
+  pod 'SnapKit'
   # Pods for tweeterForMobile
 
 end

@@ -30,7 +30,6 @@ class alamofireRequest{
                       view.addSubview(tweetPreview)
                     }
                     view.contentSize = CGSize(width: Int(screenSize.width), height: (self.tweetPreviews.count)*29)
-                    view.layer.position = CGPoint(x: screenSize.width/2, y: screenSize.height/2)
                   case .failure(let error):
                     print("Alamofire Failed:\(error)")
                 }
