@@ -1,5 +1,7 @@
 import UIKit
 
+let alamofire = alamofireRequest()
+var safeAreaHeight = 0
 var tweetString: String = ""
 
 struct TweetParams : Encodable {
@@ -8,30 +10,38 @@ struct TweetParams : Encodable {
 
 class ViewController: UIViewController {
   let screenSize = UIScreen.main.bounds.size
-  func callBack() {
-    let TweetSecondView = UIView(frame: CGRect(x: 0, y: 0, width: self.screenSize.width, height: 40))
-    TweetSecondView.backgroundColor = UIColor(red: 0.1, green: 0.5, blue: 1.0, alpha: 1.0)
-    TweetView.addSubview(TweetSecondView)
-    let TweetTextLabel = UILabel(frame: CGRect(x: 5, y: 5, width: 200, height: 30))
-    TweetTextLabel.text = tweetString
-    TweetSecondView.addSubview(TweetTextLabel)
-  }
+  let statusBarHeight = Int(UIApplication.shared.statusBarFrame.size.height)
+  let TweetView = UIScrollView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 400))
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == "tweetViewSegue" {
       let tweetViewController = segue.destination as! TweetViewController
-      tweetViewController.childCallBack = { self.callBack() }
+      tweetViewController.TweetView = TweetView
+      tweetViewController.stackViewHeight = Int(ButtonStackViewOutlet.bounds.height)
     }
+  }
+
+  override func viewWillLayoutSubviews() {
+    super.viewWillLayoutSubviews()
+    if #available(iOS 11.0, *) {
+      safeAreaHeight = Int(self.view.safeAreaInsets.top + self.view.safeAreaInsets.bottom)
+    }
+    let stackViewHeight = Int(ButtonStackViewOutlet.bounds.height)
+//    TweetView.bounds.size.height = UIScreen.main.bounds.size.height - CGFloat(statusBarHeight + stackViewHeight + safeAreaHeight)
+//    print("safeAreaHeight:\(safeAreaHeight), statusBarHeight:\(statusBarHeight), stackViewHeight:\(stackViewHeight)")
   }
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    self.view.addSubview(TweetView)
+    self.view.bringSubviewToFront(TweetButtonOutlet)
+    alamofire.tweet(params: alamofireRequest.TweetParams(text: ""), view: TweetView, screenSize: screenSize)
   }
-    
+  
+  @IBOutlet weak var ButtonStackViewOutlet: UIStackView!
+  @IBOutlet weak var TweetButtonOutlet: UIButton!
   @IBAction func tweetButtonAction(_ sender: Any) {
     self.performSegue(withIdentifier: "tweetViewSegue", sender: self)
   }
-  
-  @IBOutlet weak var TweetView: UIView!
   
 }

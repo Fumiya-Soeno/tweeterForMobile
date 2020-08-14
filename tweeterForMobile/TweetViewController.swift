@@ -1,10 +1,13 @@
 import UIKit
 
 class TweetViewController: UIViewController, UITextViewDelegate{
-  var childCallBack: (() -> Void)?
+  var TweetView: UIScrollView!
+  var stackViewHeight: Int!
   let alamofire = alamofireRequest()
   var keyboardHeight = 0
   var safeAreaHeight = 0
+  let screenSize = UIScreen.main.bounds.size
+  let statusBarHeight = Int(UIApplication.shared.statusBarFrame.size.height)
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -26,13 +29,16 @@ class TweetViewController: UIViewController, UITextViewDelegate{
   @IBOutlet weak var TweetTextViewOutlet: PlaceHolderTextView!
   @IBOutlet weak var TweetTextViewHeightOutlet: NSLayoutConstraint!
   @IBOutlet weak var TweetButtonOutlet: UIButton!
+  
   @IBAction func TweetButtonAction(_ sender: Any) {
     let tweet = TweetTextViewOutlet.text
     if(tweet != ""){
       self.dismiss(animated: true, completion: {
-        tweetString = tweet!
-        self.alamofire.tweet(params: alamofireRequest.TweetParams(text: tweetString))
-        self.childCallBack?()
+//        tweetString = tweet!
+        tweetString = "aaa"
+        self.alamofire.tweet(params: alamofireRequest.TweetParams(text: tweetString),
+                             view: self.TweetView,
+                             screenSize: self.screenSize)
         tweetString = ""
       })
     }
@@ -40,11 +46,11 @@ class TweetViewController: UIViewController, UITextViewDelegate{
   
   func textViewDidChangeSelection(_ textView: UITextView){
     if #available(iOS 11.0, *) {
-        let safeAreaTop = self.view.safeAreaInsets.top
-        let safeAreaBottom = self.view.safeAreaInsets.bottom
+      let safeAreaTop = self.view.safeAreaInsets.top
+      let safeAreaBottom = self.view.safeAreaInsets.bottom
       safeAreaHeight = Int(safeAreaTop + safeAreaBottom)
     }
-    let frameHeight: Int = Int(self.view.bounds.height) - keyboardHeight - safeAreaHeight - 39
+    let frameHeight: Int = Int(self.view.bounds.height) - keyboardHeight - safeAreaHeight - statusBarHeight
     if Int(textView.contentSize.height) > frameHeight {
       TweetTextViewHeightOutlet.constant = CGFloat(frameHeight)
     }

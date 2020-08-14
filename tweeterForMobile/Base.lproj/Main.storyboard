@@ -49,35 +49,23 @@
                                     <constraint firstAttribute="height" constant="50" id="aJa-5H-5OG"/>
                                 </constraints>
                             </stackView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uwH-RC-DL9">
-                                <rect key="frame" x="0.0" y="88" width="414" height="728"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j05-TH-JYD">
-                                        <rect key="frame" x="335" y="651" width="59" height="57"/>
-                                        <state key="normal" image="plus.circle.fill" catalog="system">
-                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="50"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="tweetButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ClD-dS-BGP"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="j05-TH-JYD" secondAttribute="bottom" constant="20" id="iIM-SA-K9h"/>
-                                    <constraint firstAttribute="trailing" secondItem="j05-TH-JYD" secondAttribute="trailing" constant="20" id="lw7-kL-d0v"/>
-                                </constraints>
-                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j05-TH-JYD">
+                                <rect key="frame" x="335" y="739" width="59" height="57"/>
+                                <state key="normal" image="plus.circle.fill" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="50"/>
+                                </state>
+                                <connections>
+                                    <action selector="tweetButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ClD-dS-BGP"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="NEk-F3-Mk5" secondAttribute="bottom" constant="30" id="ES1-wq-nG5"/>
-                            <constraint firstItem="uwH-RC-DL9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Sn0-lB-75h"/>
-                            <constraint firstItem="uwH-RC-DL9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="cPh-kM-QBo"/>
                             <constraint firstAttribute="trailing" secondItem="NEk-F3-Mk5" secondAttribute="trailing" id="hAC-bS-ARK"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uwH-RC-DL9" secondAttribute="trailing" id="hx8-ud-jvh"/>
                             <constraint firstItem="NEk-F3-Mk5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="i75-lm-HHn"/>
-                            <constraint firstItem="NEk-F3-Mk5" firstAttribute="top" secondItem="uwH-RC-DL9" secondAttribute="bottom" id="i7O-ph-71w"/>
+                            <constraint firstItem="NEk-F3-Mk5" firstAttribute="top" secondItem="j05-TH-JYD" secondAttribute="bottom" constant="20" id="neh-fb-XHF"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="j05-TH-JYD" secondAttribute="trailing" constant="20" id="xKy-cW-qDU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -110,7 +98,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="TweetView" destination="uwH-RC-DL9" id="oFt-rF-pK5"/>
+                        <outlet property="ButtonStackViewOutlet" destination="NEk-F3-Mk5" id="jbR-NS-rrc"/>
+                        <outlet property="TweetButtonOutlet" destination="j05-TH-JYD" id="DfQ-2p-9b3"/>
                         <segue destination="I72-Cr-dsM" kind="modal" identifier="tweetViewSegue" modalPresentationStyle="fullScreen" id="ig5-jB-j9T"/>
                     </connections>
                 </viewController>
